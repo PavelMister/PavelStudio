@@ -1,0 +1,48 @@
+#include "stdafx.h"
+#include "iostream" 
+#include "math.h" 
+#include "conio.h"
+#include <string>     // std::string, std::to_string
+
+using namespace std;
+
+int power(int x, int n) 
+{ 
+	int buf = x;
+	bool isNegative = false;
+	
+	if (n < 0) {
+		n = -n;
+		isNegative = true;
+	}
+
+	for (int i = 1; i < n; i++) 
+	{
+		buf *= x; 
+	} 
+
+	if (isNegative == true) 
+	{
+		buf =-buf;
+	}
+
+	return buf; 
+}
+
+int main() 
+{ 
+	int x = 0; 
+	int n = 0; 
+	scanf_s("%i", &x); 
+	scanf_s("%i", &n); 
+
+	int j = power(x, n);
+	if (j > 0)
+	{
+		printf("j=%d", j); 
+	} else {
+		printf("j=1/%d", -j); 
+	}
+	getch();
+	return 0; 
+} 
